@@ -51,3 +51,11 @@
 * Github reposu oluşturma
 * Azure Devops ile çalışma
 * Azure üzerinde uygulama yayınlama.
+
+## Gerekli Araç ve Kurulumlar
+
+* [Visual Studio 2017 Community](https://visualstudio.microsoft.com/tr/vs/)
+
+* [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)
+
+* [Visual Studio Code](https://code.visualstudio.com/)
