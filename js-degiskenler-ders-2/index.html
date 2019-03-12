@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #urunler {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        #liste {
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="urunler">
+        <input type="text" id="birinci-urun" placeholder="ürün tanımlayın">
+        <input type="number" id="fiyat" placeholder="fiyat girin">
+        <input type="number" id="adet" placeholder="adet girin">
+        <button id="birinci-ekle" type="button">Ekle</button>
+    </div>
+    <div id="liste">
+        <table border="1">
+            <tr>
+                <th width="150px">Ürün Adı</th>
+                <th width="40px">Fiyat</th>
+                <th width="40px">Adet</th>
+                <th>İşlem</th>
+            </tr>
+            <tbody id="urunler-listesi">
+            </tbody>
+        </table>
+    </div>
+    <script src="./js/index.js">
+    </script>
+</body>
+
+</html>
