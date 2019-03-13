@@ -24,7 +24,7 @@ function urunEkle(_urunAdi, _fiyat, _adet) {
 }
 
 function listeyeEkle(_urunAdi, _fiyat, _adet) {
-    var cikarButton = `<button type="button" onclick="urunCikar(this)">Çıkar</button>`;
+    var cikarButton = `<button type="button" onclick="urunCikar('`+liste.length+`')">Çıkar</button>`;
     var row = '<tr><td>' + _urunAdi + '</td><td>' + _fiyat + '</td><td>' + _adet + '</td><td>' + cikarButton + '</td></tr>';
     liste.push(row);
     listele();
@@ -39,12 +39,23 @@ function listele() {
 }
 function urunCikar(_index) {
     var yeniListe = new Array();
+    var yeniUrunler=new Array();
+    var yeniFiyatlar=new Array();
+    var yeniAdetler=new Array();
     var i;
     for (i = 0; i < liste.length; i++) {
         if (i != _index) {
-            yeniListe.push = liste[i];
+            yeniUrunler.push(urunler[i]);
+            yeniFiyatlar.push(fiyatlar[i]);
+            yeniAdetler.push(adetler[i]);
+            var cikarButton = `<button type="button" onclick="urunCikar('`+i+`')">Çıkar</button>`;
+            var row = '<tr><td>' + urunler[i] + '</td><td>' + fiyatlar[i] + '</td><td>' + adetler[i] + '</td><td>' + cikarButton + '</td></tr>';
+            yeniListe.push(row);
         }
     }
+    urunler=yeniUrunler;
+    fiyatlar=yeniFiyatlar;
+    adetler=yeniAdetler;
     liste=yeniListe;
     listele();
 }
