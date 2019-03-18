@@ -1,0 +1,49 @@
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<body>
+    <div id="gorev_ekle">
+        <input type="text" id="gorev_adi" placeholder="Görev Adı">
+        <input type="text" id="atanan" placeholder="Atanan Kişi">
+        <input type="date" id="bitis_tarihi" placeholder="Bitiş Tarihi" min="2019-03-18" max="2019-04-18">
+        <button type="button" id="ekle_btn">Ekle</button>
+    </div>
+    <hr />
+    <input id="arama" type="text" placeholder="Ara..">
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Görev Adı</th>
+                <th>Atanan Kişi</th>
+                <th>Bitiş Tarihi</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody id="gorevler">
+        </tbody>
+    </table>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
