@@ -48,16 +48,18 @@ function gorevEkle(_gorevAdi, _atanan, _tarih) {
         bitisTarihi: _tarih
     });
     $("#gorevler").html(tabloyuAl(_json));
+
+   
+
 }
 
 function yeniIdAl(_obj) {
     if (!_obj.length > 0) { return 1 };
-    var tumIdleriGetir = _obj.map(obj =>  obj.id );
+    var tumIdleriGetir = _obj.map(obj => obj.id);
     return Math.max(...tumIdleriGetir) + 1;
 }
 
 $(".islem_btn").click(function () {
-    alert($(this).attr("data-val").val());
-})
-
+    alert($(this).attr("data-val"));
+});
 
