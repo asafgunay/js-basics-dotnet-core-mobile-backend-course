@@ -50,7 +50,10 @@ function gorevEkle(_gorevAdi, _atanan, _tarih) {
     $("#gorevler").html(tabloyuAl(_json));
 
    
-
+    $(".islem_btn").click(function () {
+        alert($(this).attr("data-val"));
+    });
+    
 }
 
 function yeniIdAl(_obj) {
@@ -59,7 +62,4 @@ function yeniIdAl(_obj) {
     return Math.max(...tumIdleriGetir) + 1;
 }
 
-$(".islem_btn").click(function () {
-    alert($(this).attr("data-val"));
-});
 
