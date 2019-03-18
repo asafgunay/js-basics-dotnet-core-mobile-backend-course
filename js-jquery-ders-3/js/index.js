@@ -52,8 +52,8 @@ function gorevEkle(_gorevAdi, _atanan, _tarih) {
 
 function yeniIdAl(_obj) {
     if (!_obj.length > 0) { return 1 };
-    var tumIdleriGetir = _obj.maps(obj => obj.id);
-    return Math.max(null, tumIdleriGetir) + 1;
+    var tumIdleriGetir = _obj.map(obj =>  obj.id );
+    return Math.max(...tumIdleriGetir) + 1;
 }
 
 $(".islem_btn").click(function () {
