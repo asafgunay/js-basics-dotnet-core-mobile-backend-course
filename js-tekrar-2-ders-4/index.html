@@ -6,9 +6,31 @@
 
 <body>
     <h1>Javascript Ders 4 Konu Tekrar(2)</h1>
-   <!-- Burada iki adet input ve bir tane ekle butonu yapılacak input id'leri: input1,input2 buton onclick'i ekleBtn() olacak ve bu isimle bir fonksiyonu index.js de oluşturun. ekleBtn çalıştığında inputlardan biri boş olursa alert ile hatalısın mesajını göndersin değilse
+    <!-- Burada iki adet input ve bir tane ekle butonu yapılacak input id'leri: input1,input2 buton onclick'i ekleBtn() olacak ve bu isimle bir fonksiyonu index.js de oluşturun. ekleBtn çalıştığında inputlardan biri boş olursa alert ile hatalısın mesajını göndersin değilse
    inputların içeriğini alerte göndersin -->
-   
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <button type="button" onclick="ekleBtn()">
+        Ekle
+    </button>
+
+    <!-- Buraya bir tablo oluşturun -->
+    <hr/>
+    <br/>
+    <table border="2" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>İsim</th>
+                <th>Doğum Tarihi</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody id="tablom">
+        </tbody>
+    </table>
+
+
     <script src="./js/index.js"></script>
 </body>
 
