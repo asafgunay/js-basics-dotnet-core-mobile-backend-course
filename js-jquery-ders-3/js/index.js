@@ -51,7 +51,7 @@ function gorevEkle(_gorevAdi, _atanan, _tarih) {
 
    
     $(".islem_btn").click(function () {
-        alert($(this).attr("data-val"));
+        $(this).closest('tr').remove();
     });
     
 }
@@ -63,3 +63,7 @@ function yeniIdAl(_obj) {
 }
 
 
+
+// $("#gorevler").on('click', '.islem_btn', function(){
+//     $(this).closest('tr').remove();
+// });
