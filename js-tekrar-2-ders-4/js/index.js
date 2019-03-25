@@ -1,14 +1,14 @@
 // 1- ekleBtn çalıştığında inputlardan biri boş olursa alert ile hatalısın mesajını göndersin değilse inputların içeriğini alerte göndersin.
-function ekleBtn() {
-    var input1 = document.getElementById("input1").value;
-    var input2 = document.getElementById("input2").value;
-    if (input1.length > 0 && input2.length > 0) {
-        alert(input1 + " - " + input2);
-    }
-    else {
-        alert("hatalısın!");
-    }
-}
+// function ekleBtn() {
+//     var input1 = document.getElementById("input1").value;
+//     var input2 = document.getElementById("input2").value;
+//     if (input1.length > 0 && input2.length > 0) {
+//         alert(input1 + " - " + input2);
+//     }
+//     else {
+//         alert("hatalısın!");
+//     }
+// }
 // 2- bir json variable'ı oluşturun örnek datalı!
 var jsonData = {
     id: 1,
@@ -54,7 +54,9 @@ function tabloYap(_array) {
             "<td>" + item.id + "</td>" +
             "<td>" + item.isim + "</td>" +
             "<td>" + item.dogumTarihi + "</td>" +
-            "<td>buton yok</td>" +
+            '<td>'+
+            '<button type="button" onclick="listedenKaldir(\''+item.id+
+            '\')">Listeden Çıkar</button></td>' +
             "</tr>";
         return satir;
     })
@@ -62,14 +64,65 @@ function tabloYap(_array) {
     document.getElementById("tablom").innerHTML = tablomHtml.join('');
 }
 
-tabloYap(jsonArr);
+// tabloYap(jsonArr);
 
 
 // 5- jsonArrData diye yeni bir boş array oluşturun
+var jsonArrData = [];
+
 // 6- ekleBtn() fonksiyonu çalıştığında jsonData yapısında bir json'ı jsonArrData'ya push edin
+function ekleBtn() {
+    var input1 = document.getElementById("input1").value;
+    var input2 = document.getElementById("input2").value;
+    if (input1.length > 0 && input2.length > 0) {
+        ekleJson(input1, input2);
+    }
+    else {
+        alert("hatalısın!");
+    }
+}
+
+function ekleJson(_isim, _dogumTarihi) {
+    var json = {
+        id: getNextId(),
+        isim: _isim,
+        dogumTarihi: _dogumTarihi
+    };
+    jsonArrData.push(json);
+    tabloYap(jsonArrData);
+}
+
+function getNextId() {
+    var idler = [];
+    var yeniId = 1;
+    idler = jsonArrData.map(item => item.id);
+    if (idler.length > 0) {
+        yeniId = Math.max.apply(null, idler) + 1;
+    }
+    return yeniId;
+}
 // 7- push işleminin ardından jsonArrData'yı tabloYap() fonksiyonuna parametre olarak gönderip çalıştırın ve tablo oluşsun
-// 8- listedenKaldır(_id) fonksiyonu oluşturun sonra tabloYap()'da buton yok yazan yere '<button type="button" onclick="listedenKaldir(\''+buraya id gelecek+'\')">Çıkar</button>' şeklinde güncelleyin.
+
+// 8- listedenKaldir(_id) fonksiyonu oluşturun sonra tabloYap()'da buton yok yazan yere '<button type="button" onclick="listedenKaldir(\''+buraya id gelecek+'\')">Çıkar</button>' şeklinde güncelleyin.
+function listedenKaldir(_id){
+//    var yeniArr = [];
+//    for(jsonArrData'nın içinde dön){
+//        yeniArr'ın içine at
+//    }
+//    sonra yeniArr'ı jsonArrData'ya ata
+//    ardından tabloyap'a gönder.
+}
+
+
 // 9- listedenKaldır(_id) çalıştığında jsonArrData'dan eşleşen id'li json'ı kaldırın ve yeni jsonArrData ile tekrar tabloYap fonksiyonunu çalıştırın
 // 10- searchInput diye bir input oluşturun bu input içerisinde her karakter tuşlamasında listede arama yapsın filters kullanılacak
+
+
+
+
+
+
+
+
 
 
