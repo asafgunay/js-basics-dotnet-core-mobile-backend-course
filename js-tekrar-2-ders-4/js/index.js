@@ -50,15 +50,18 @@ function tabloYap(_array) {
 
     // map ile nasıl yaparız?
     tablomHtml = _array.map(item => {
-        var satir = "<tr>" +
-            "<td>" + item.id + "</td>" +
-            "<td>" + item.isim + "</td>" +
-            "<td>" + item.dogumTarihi + "</td>" +
-            '<td>'+
-            '<button type="button" onclick="listedenKaldir(\''+item.id+
-            '\')">Listeden Çıkar</button></td>' +
-            "</tr>";
-        return satir;
+        if (item != null) {
+            var satir = "<tr>" +
+                "<td>" + item.id + "</td>" +
+                "<td>" + item.isim + "</td>" +
+                "<td>" + item.dogumTarihi + "</td>" +
+                '<td>' +
+                '<button type="button" onclick="listedenKaldir(\'' + item.id +
+                '\')">Listeden Çıkar</button></td>' +
+                "</tr>";
+            return satir;
+        }
+
     })
 
     document.getElementById("tablom").innerHTML = tablomHtml.join('');
@@ -104,14 +107,32 @@ function getNextId() {
 // 7- push işleminin ardından jsonArrData'yı tabloYap() fonksiyonuna parametre olarak gönderip çalıştırın ve tablo oluşsun
 
 // 8- listedenKaldir(_id) fonksiyonu oluşturun sonra tabloYap()'da buton yok yazan yere '<button type="button" onclick="listedenKaldir(\''+buraya id gelecek+'\')">Çıkar</button>' şeklinde güncelleyin.
-function listedenKaldir(_id){
-//    var yeniArr = [];
-//    for(jsonArrData'nın içinde dön){
-//        yeniArr'ın içine at
-//    }
-//    sonra yeniArr'ı jsonArrData'ya ata
-//    ardından tabloyap'a gönder.
+
+function listedenKaldir(_id) {
+    var yeniArr = [];
+    for (var i = 0; i < jsonArrData.length; i++) {
+        if(jsonArrData[i].id!=_id){
+            yeniArr.push(jsonArrData[i]);
+        }
+    }
+    tabloYap(yeniArr);
+    jsonArrData=yeniArr;
 }
+
+
+
+
+
+
+
+
+    // function listedenKaldir(_id){
+    //     var jArr = jsonArrData.filters(item => {
+    //         return item.id !=_id;
+    //     });
+    //     tabloYap(jArr);
+    //     jsonArrData=jArr;
+    // }
 
 
 // 9- listedenKaldır(_id) çalıştığında jsonArrData'dan eşleşen id'li json'ı kaldırın ve yeni jsonArrData ile tekrar tabloYap fonksiyonunu çalıştırın
