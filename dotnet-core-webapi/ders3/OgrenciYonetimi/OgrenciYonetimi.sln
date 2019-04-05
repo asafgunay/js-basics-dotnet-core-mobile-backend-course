@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgrenciYonetimi", "OgrenciYonetimi\OgrenciYonetimi.csproj", "{DDE3AEC4-0371-435B-938F-1C96A6F89400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgrenciYonetimi.Data", "OgrenciYonetimi.Data\OgrenciYonetimi.Data.csproj", "{13719AB5-704B-48F0-8E07-39CE77D0D1EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE3AEC4-0371-435B-938F-1C96A6F89400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE3AEC4-0371-435B-938F-1C96A6F89400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE3AEC4-0371-435B-938F-1C96A6F89400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE3AEC4-0371-435B-938F-1C96A6F89400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13719AB5-704B-48F0-8E07-39CE77D0D1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13719AB5-704B-48F0-8E07-39CE77D0D1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13719AB5-704B-48F0-8E07-39CE77D0D1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13719AB5-704B-48F0-8E07-39CE77D0D1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6627F32-DA23-4641-903B-A080C82EBFDE}
+	EndGlobalSection
+EndGlobal

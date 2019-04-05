@@ -108,16 +108,16 @@ function getNextId() {
 
 // 8- listedenKaldir(_id) fonksiyonu oluşturun sonra tabloYap()'da buton yok yazan yere '<button type="button" onclick="listedenKaldir(\''+buraya id gelecek+'\')">Çıkar</button>' şeklinde güncelleyin.
 
-function listedenKaldir(_id) {
-    var yeniArr = [];
-    for (var i = 0; i < jsonArrData.length; i++) {
-        if(jsonArrData[i].id!=_id){
-            yeniArr.push(jsonArrData[i]);
-        }
-    }
-    tabloYap(yeniArr);
-    jsonArrData=yeniArr;
-}
+// function listedenKaldir(_id) {
+//     var yeniArr = [];
+//     for (var i = 0; i < jsonArrData.length; i++) {
+//         if(jsonArrData[i].id!=_id){
+//             yeniArr.push(jsonArrData[i]);
+//         }
+//     }
+//     tabloYap(yeniArr);
+//     jsonArrData=yeniArr;
+// }
 
 
 
@@ -125,19 +125,30 @@ function listedenKaldir(_id) {
 
 
 
-
-    // function listedenKaldir(_id){
-    //     var jArr = jsonArrData.filters(item => {
-    //         return item.id !=_id;
-    //     });
-    //     tabloYap(jArr);
-    //     jsonArrData=jArr;
-    // }
 
 
 // 9- listedenKaldır(_id) çalıştığında jsonArrData'dan eşleşen id'li json'ı kaldırın ve yeni jsonArrData ile tekrar tabloYap fonksiyonunu çalıştırın
 // 10- searchInput diye bir input oluşturun bu input içerisinde her karakter tuşlamasında listede arama yapsın filters kullanılacak
 
+
+function listedenKaldir(_id) {
+    var jArray = jsonArrData.filter(item => {
+        return item.id!=_id;
+    });
+    tabloYap(jArray);
+    jsonArrData = jArray;
+}
+function listedeAra(){
+    var _keyWord = document.getElementById("searchInput").value;
+    _keyWord = _keyWord.toUpperCase();
+    var jArray = jsonArrData.filter(item => {
+        return !item.isim.toUpperCase().indexOf(_keyWord);
+    })
+    tabloYap(jArray);
+    if(_isim.length==0){
+        tabloYap(jsonArrData);
+    }
+}
 
 
 
