@@ -53,6 +53,7 @@ namespace OgrenciYonetimi.Controllers
             //}
             return ogrenciler;
         }
-
+        // Update HttpPut
+        // Delete HttpDelete
     }
 }
