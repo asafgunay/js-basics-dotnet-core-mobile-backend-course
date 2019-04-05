@@ -19,5 +19,18 @@ namespace OgrenciYonetimi.Data.DataModels
         [ForeignKey("SinifId")]
         public virtual Sinif Sinif { get; set; }
         public int SinifId { get; set; }
+
+        public static Ogrenci Create(string adi, string soyadi, int no, string cinsiyet, int sinifId)
+        {
+            return new Ogrenci
+            {
+                Adi = adi,
+                Soyadi = soyadi,
+                No = no,
+                Cinsiyet = cinsiyet,
+                SinifId = sinifId
+            };
+        } 
     }
+
 }
