@@ -23,6 +23,7 @@ namespace OgrenciYonetimi.Data.EntityFramework
         public DbSet<Sinif> Siniflar { get; set; }
         public DbSet<Ogrenci> Ogrenciler { get; set; }
         public DbSet<Ders> Dersler { get; set; }
+        public DbSet<OgrenciDers> OgrenciDersler { get; set; }
 
 
     }

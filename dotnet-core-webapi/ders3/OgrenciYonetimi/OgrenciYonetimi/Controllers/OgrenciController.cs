@@ -43,7 +43,7 @@ namespace OgrenciYonetimi.Controllers
         {
             List<Ogrenci> ogrenciler =
                 await _context.Ogrenciler
-                .Include(ogrencilerim=> ogrencilerim.Sinif)
+                .Include(ogrencilerim => ogrencilerim.Sinif)
                 .ToListAsync();
             // bütün sınıfları getir
             //var siniflar = _context.Siniflar.ToList();
@@ -54,6 +54,41 @@ namespace OgrenciYonetimi.Controllers
             return ogrenciler;
         }
         // Update HttpPut
+        [HttpPut]
+        public async Task<ActionResult<Ogrenci>> UpdateOgrenci(UpdateOgrenciInput input)
+        {
+            try
+            {
+                Ogrenci eskiHali = await _context.Ogrenciler.FindAsync(input.Id);
+                eskiHali.Adi = input.Adi;
+                eskiHali.Soyadi = input.Soyadi;
+                eskiHali.Cinsiyet = input.Cinsiyet;
+                eskiHali.No = input.No;
+                eskiHali.SinifId = input.SinifId;
+                await _context.SaveChangesAsync();
+                return Ok(eskiHali);
+
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+        }
         // Delete HttpDelete
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteOgrenci(int id)
+        {
+            try
+            {
+                var ogrenci = await _context.Ogrenciler.FindAsync(id);
+                _context.Ogrenciler.Remove(ogrenci);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+        }
     }
 }

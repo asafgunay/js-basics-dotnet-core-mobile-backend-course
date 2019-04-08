@@ -48,6 +48,38 @@ namespace OgrenciYonetimi.Controllers
         }
 
         // Update HttpPut
+        [HttpPut]
+        public async Task<ActionResult<Ders>> UpdateDers(UpdateDersInput input)
+        {
+            Ders eskiHali = await _context.Dersler.FindAsync(input.DersId);
+            eskiHali.SinifId = input.SinifId;
+            eskiHali.DersAdi = input.DersAdi;
+            eskiHali.CreatedDate = eskiHali.CreatedDate;
+            //Ders yeniDers = new Ders
+            //{
+            //    SinifId = input.SinifId,
+            //    DersAdi = input.DersAdi,
+            //    DersId = input.DersId,         
+            //};
+            //_context.Entry(yeniDers).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return eskiHali;
+        }
         // Delete HttpDelete
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteDers(int id)
+        {
+            try
+            {
+                var ders = await _context.Dersler.FindAsync(id);
+                _context.Dersler.Remove(ders);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+        }
     }
 }
