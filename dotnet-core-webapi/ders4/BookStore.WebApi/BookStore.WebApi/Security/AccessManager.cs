@@ -62,7 +62,7 @@ namespace BookStore.WebApi.Security
                     new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
                 });
             DateTime startedDate = DateTime.Now;
-            DateTime expiredDate = startedDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
+            DateTime expiredDate = startedDate + TimeSpan.FromSeconds(3600);
 
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(

@@ -22,6 +22,5 @@ namespace BookStore.WebApi.DAL
     }
     public class ApplicationUser : IdentityUser
     {
-
     }
 }
