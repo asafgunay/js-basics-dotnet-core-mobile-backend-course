@@ -1,0 +1,14 @@
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.csprojAssemblyReference.cache
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.RazorAssemblyInfo.cache
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.RazorAssemblyInfo.cs
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.AssemblyInfoInputs.cache
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.AssemblyInfo.cs
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\bin\Debug\netcoreapp2.2\BookStore.WebApi.deps.json
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\bin\Debug\netcoreapp2.2\BookStore.WebApi.runtimeconfig.json
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\bin\Debug\netcoreapp2.2\BookStore.WebApi.runtimeconfig.dev.json
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\bin\Debug\netcoreapp2.2\BookStore.WebApi.dll
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\bin\Debug\netcoreapp2.2\BookStore.WebApi.pdb
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.dll
+C:\Users\Asaf\source\repos\butgem\js-basics-dotnet-core-mobile-backend-course\dotnet-core-webapi\ders4\BookStore.WebApi\BookStore.WebApi\obj\Debug\netcoreapp2.2\BookStore.WebApi.pdb
