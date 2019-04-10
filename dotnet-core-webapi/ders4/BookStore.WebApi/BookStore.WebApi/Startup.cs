@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookStore.WebApi.DAL;
+using BookStore.WebApi.Security;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -53,13 +54,31 @@ namespace BookStore.WebApi
                 .AddEntityFrameworkStores<BookStoreDbContext>()
                 .AddSignInManager()
                 .AddDefaultTokenProviders();
-            services.AddAuthentication(auth =>
-            {
-                auth.DefaultScheme = IdentityConstants.ApplicationScheme;
-                auth.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-            }).AddIdentityCookies(auth =>
-            {
-            });
+
+            services.AddScoped<AccessManager>();
+
+            var signingConfigurations = new SigningConfigurations();
+            services.AddSingleton(signingConfigurations);
+
+            var tokenConfigurations = new TokenConfigurations();
+
+            new ConfigureFromConfigurationOptions<TokenConfigurations>(
+                Configuration.GetSection("TokenConfigurations"))
+                .Configure(tokenConfigurations);
+
+            services.AddSingleton(tokenConfigurations);
+
+
+            services.AddJwtSecurity(
+                signingConfigurations, tokenConfigurations);
+
+            services.AddCors();
+
+            //services.AddAuthentication(auth =>
+            //{
+            //    auth.DefaultScheme = IdentityConstants.ApplicationScheme;
+            //    auth.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+            //});
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
