@@ -25,6 +25,21 @@ namespace BookStore.WebApi.Models
         public virtual Author Author { get; set; }
         public int AuthorId { get; set; }
 
+        public static Book Create(string name, decimal price, string imgUrl, decimal rating, string binding, DateTime releaseDate, string details, int publisherId, int authorId)
+        {
+            return new Book
+            {
+                AuthorId = authorId,
+                Details = details,
+                Binding = binding,
+                ImgUrl = imgUrl,
+                Name = name,
+                Price = price,
+                PublisherId = publisherId,
+                Rating = rating,
+                ReleaseDate = releaseDate
+            };
+        }
 
     }
 }
