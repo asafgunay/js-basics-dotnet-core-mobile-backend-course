@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookStore.WebApi.DAL;
 using BookStore.WebApi.Models;
+using BookStore.WebApi.Services;
+using BookStore.WebApi.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,36 +15,85 @@ namespace BookStore.WebApi.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
-        public BookController(BookStoreDbContext context)
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
         {
-            _context = context;
+            _bookService = bookService;
         }
         [HttpPost]
-        public async Task<ActionResult> Create(/*CreateBookInput*/)
+        public async Task<ActionResult> Create(CreateBookInput input)
         {
-            return null;
+            try
+            {
+                await _bookService.CreateAsync(input);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> Get(int id)
         {
-            return null;
+            try
+            {
+                var res = await _bookService.GetAsync(id);
+                if (res != null)
+                    return Ok(res);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
         }
         [HttpGet]
         public async Task<ActionResult<List<Book>>> GetAll()
         {
-            return null;
+            try
+            {
+                var res = await _bookService.GetAllAsync();
+                if (res != null)
+                    return Ok(res);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(/*UpdatePublisherInput*/)
+        public async Task<ActionResult<Book>> Update(UpdateBookInput input)
         {
-            return null;
+            try
+            {
+                var res = await _bookService.UpdateAsync(input);
+                if (res != null)
+                    return Ok(res);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NoContent();
+            }
         }
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            return null;
+            try
+            {
+                await _bookService.DeleteAsync(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
         }
     }
 }

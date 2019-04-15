@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookStore.WebApi.DAL;
 using BookStore.WebApi.Security;
+using BookStore.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -74,11 +75,17 @@ namespace BookStore.WebApi
 
             services.AddCors();
 
+
             //services.AddAuthentication(auth =>
             //{
             //    auth.DefaultScheme = IdentityConstants.ApplicationScheme;
-            //    auth.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+            //    auth.DefaultSignInScheme = "IdentityConstants.ExternalScheme;
             //});
+
+
+            services.AddScoped<IPublisherService, PublisherService>();
+            services.AddScoped<IAuthorSevice, AuthorService>();
+            services.AddScoped<IBookService, BookService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
