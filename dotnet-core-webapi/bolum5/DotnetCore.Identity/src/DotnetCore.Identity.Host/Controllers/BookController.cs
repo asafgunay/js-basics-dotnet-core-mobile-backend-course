@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using DotnetCore.Identity.Data.Entities;
 using DotnetCore.Identity.Data.Services;
 using DotnetCore.Identity.Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotnetCore.Identity.Host.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class BookController : ControllerBase
     {
