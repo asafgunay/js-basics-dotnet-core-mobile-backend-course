@@ -17,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace DotnetCore.Identity.Host
 {
@@ -40,6 +41,26 @@ namespace DotnetCore.Identity.Host
                 .AllowAnyMethod()
                 .AllowAnyHeader();
             }));
+            #endregion
+
+            #region swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(
+                "CoreSwagger", new Info
+                {
+                    Title = "Bookstore uygulaması için Swagger",
+                    Version = "1.0.0",
+                    Description = "API Dokümantasyonu",
+                    Contact = new Contact()
+                    {
+                        Name = "Asaf Günay",
+                        Url = "https://butgem.org",
+                        Email = "asafgunay@butgem.org"
+                    },
+                    TermsOfService = "https://butgem.org/Security"
+                });
+            });
             #endregion
 
             #region Add Entity Framework and Identity Framework  
@@ -92,7 +113,13 @@ namespace DotnetCore.Identity.Host
                 app.UseHsts();
             }
 
-
+            #region swagger
+            app.UseSwagger().UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/CoreSwagger/swagger.json",
+                    "Swagger Test .NET Core");
+            });
+            #endregion
             app.UseHttpsRedirection();
             app.UseMvc();
         }
