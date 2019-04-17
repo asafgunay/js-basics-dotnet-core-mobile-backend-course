@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DotnetCore.Identity.Data.DbContexts;
 using DotnetCore.Identity.Data.Entities;
+using DotnetCore.Identity.Data.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -118,6 +119,12 @@ namespace DotnetCore.Identity.Host
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
             });
+            #endregion
+
+            #region Services
+            services.AddScoped<IPublisherService, PublisherService>();
+            services.AddScoped<IAuthorSevice, AuthorService>();
+            services.AddScoped<IBookService, BookService>();
             #endregion
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DotnetCore.Identity.Data.Entities;
+﻿using DotnetCore.Identity.Data.Entities;
 using DotnetCore.Identity.Data.Services;
 using DotnetCore.Identity.Data.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DotnetCore.Identity.Host.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [Authorize]
     [ApiController]
