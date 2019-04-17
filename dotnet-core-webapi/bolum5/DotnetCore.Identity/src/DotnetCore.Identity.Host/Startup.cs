@@ -60,6 +60,12 @@ namespace DotnetCore.Identity.Host
                     },
                     TermsOfService = "https://butgem.org/Security"
                 });
+                // Swagger 2.+ support
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }},
+                };
+
                 c.AddSecurityDefinition("Bearer", new ApiKeyScheme
                 {
                     Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -67,6 +73,7 @@ namespace DotnetCore.Identity.Host
                     In = "header",
                     Type = "apiKey"
                 });
+                c.AddSecurityRequirement(security);
             });
             #endregion
 
