@@ -57,7 +57,9 @@ namespace DotnetCore.Identity.Data.Services
             try
             {
                 return await _context.Authors
-                    .Include(x=>x.Books)
+                    .Include(x => x.Books)
+                // kitapların içindeki yayıncı bilgisi gelsin
+                    .ThenInclude(p => p.Publisher)
                     .ToListAsync();
             }
             catch (Exception err)
@@ -71,7 +73,12 @@ namespace DotnetCore.Identity.Data.Services
         {
             try
             {
-                return await _context.Authors.FindAsync(id);
+                return
+                    await _context
+                    .Authors
+                    .Include(x => x.Books)
+                    .ThenInclude(x => x.Publisher)
+                    .FirstOrDefaultAsync(x => x.Id == id);
             }
             catch (Exception err)
             {

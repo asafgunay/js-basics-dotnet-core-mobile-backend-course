@@ -19,7 +19,7 @@ namespace DotnetCore.Identity.Data.Entities
         // publisher fk
         [ForeignKey("PublisherId")]
         public virtual Publisher Publisher { get; set; }
-        public int PublisherId { get; set; }
+        public int? PublisherId { get; set; }
         // author fk
         [ForeignKey("AuthorId")]
         public virtual Author Author { get; set; }

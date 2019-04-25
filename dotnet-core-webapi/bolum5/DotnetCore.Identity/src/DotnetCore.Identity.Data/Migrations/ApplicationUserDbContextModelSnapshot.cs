@@ -109,7 +109,7 @@ namespace DotnetCore.Identity.Data.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int>("PublisherId");
+                    b.Property<int?>("PublisherId");
 
                     b.Property<decimal>("Rating");
 
@@ -256,8 +256,7 @@ namespace DotnetCore.Identity.Data.Migrations
 
                     b.HasOne("DotnetCore.Identity.Data.Entities.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PublisherId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
