@@ -56,7 +56,9 @@ namespace DotnetCore.Identity.Data.Services
         {
             try
             {
-                return await _context.Authors.ToListAsync();
+                return await _context.Authors
+                    .Include(x=>x.Books)
+                    .ToListAsync();
             }
             catch (Exception err)
             {
